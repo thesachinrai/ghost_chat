@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root, .dark {
+  /* Provided Palette */
+  --ivory-mist: #f8f4e3;
+  --dust-grey: #d4cdc3;
+  --dust-grey-2: #d5d0cd;
+  --ash-grey: #a2a392;
+  --grey-olive: #9a998c;
+
+  /* Theme Mapping */
+  --background: var(--ivory-mist);
+  --foreground: #3b3a32; /* Darkened olive for readable text contrast */
+  --card-bg: rgba(212, 205, 195, 0.25); /* dust-grey with opacity */
+  --card-border: var(--dust-grey);
+  --muted: var(--ash-grey);
+  --muted-foreground: var(--grey-olive);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Premium Earthy Mesh Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(212, 205, 195, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 85% 40%, rgba(162, 163, 146, 0.15) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Premium Frosted Glass Card - Natural Aesthetic */
+.premium-card {
+  background: linear-gradient(135deg, rgba(248, 244, 227, 0.6) 0%, rgba(212, 205, 195, 0.2) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(154, 153, 140, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.premium-card:hover {
+  background: linear-gradient(135deg, rgba(248, 244, 227, 0.8) 0%, rgba(212, 205, 195, 0.3) 100%);
+  border-color: var(--ash-grey);
+  box-shadow: 0 8px 40px 0 rgba(154, 153, 140, 0.15);
+  transform: translateY(-2px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dust-grey-2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ash-grey);
+}
