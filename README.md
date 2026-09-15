@@ -68,6 +68,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-Built with ❤️ by [Zahid](https://devzahid.vercel.app/)
